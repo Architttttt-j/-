@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envelope UI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="envelope" id="envelope">
+    <div class="flap"></div>
+
+    <div class="closed-ui">
+      <button class="open-btn" onclick="openEnvelope()">Open Envelope ✉️</button>
+    </div>
+
+    <form class="letter" onsubmit="return checkName()">
+  <input type="text" id="username" placeholder="Aapka shubh naam">
+  <button type="submit">Done !!</button>
+</form>
+
+  </div>
+
+  <script>
+  function openEnvelope() {
+    document.getElementById("envelope").classList.add("open");
+  }
+
+  function checkName() {
+    const name = document.getElementById("username").value.trim().toLowerCase();
+
+    if (name.toLowerCase() === "khushi" || name.toLowerCase() === "archit") {
+      window.location.href = "next.html"; // 🔁 redirect page
+      return false;
+    } else {
+      alert("❌ Wrong naam 😌 Try again!");
+      return false;
+    }
+  }
+</script>
+
+
+</body>
+</html>
